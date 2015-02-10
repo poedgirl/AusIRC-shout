@@ -16,7 +16,7 @@ module.exports = {
 	// @type     string
 	// @default  "0.0.0.0"
 	//
-	host: "0.0.0.0",
+	host: "127.0.0.1",
 
 	//
 	// Set the port to listen on.
@@ -40,7 +40,7 @@ module.exports = {
 	// @type     string
 	// @default  "themes/example.css"
 	//
-	theme: "themes/example.css",
+	theme: "themes/zenburn.css",
 
 	//
 	// Autoload users
@@ -104,7 +104,7 @@ module.exports = {
 		// @type     string
 		// @default  "Freenode"
 		//
-		name: "Freenode",
+		name: "AusIRC",
 
 		//
 		// Host
@@ -112,7 +112,7 @@ module.exports = {
 		// @type     string
 		// @default  "irc.freenode.org"
 		//
-		host: "irc.freenode.org",
+		host: "irc.ausirc.org",
 
 		//
 		// Port
@@ -144,7 +144,7 @@ module.exports = {
 		// @type     string
 		// @default  "shout-user"
 		//
-		nick: "shout-user",
+		nick: "shout-user3",
 
 		//
 		// Username
@@ -168,7 +168,7 @@ module.exports = {
 		// @type     string
 		// @default  "#foo, #shout-irc"
 		//
-		join: "#foo, #shout-irc"
+		join: "#shouttest"
 	},
 
 	//
