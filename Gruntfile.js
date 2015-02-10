@@ -49,20 +49,23 @@ module.exports = function(grunt) {
 		"buildexe", 
 		[
 			"build-atom-shell",
-			function() { //set EXE icon
-				done = @async();
-				
-				shellAppDir = "./atom-shell";
-				executableName = grunt.config.get("build-atom-shell.projectName") + ".exe"
-				shellExePath = path.join(shellAppDir, executableName)
-				iconPath = path.resolve('resources', 'win', 'app.ico')
-				
-				rcedit = require('rcedit')
-				rcedit(shellExePath, {'icon': iconPath}, done)
-			},
-			function() { //delete debugging files for Atom
-				
-			}
+			"setexeicon",
+			"deletedebug"
 		]
 	);
+	grunt.registerTask("setexeicon", function() { //set EXE icon
+		done = this.async();
+		
+		shellAppDir = "./atom-shell";
+		executableName = grunt.config.get("build-atom-shell.projectName") + ".exe";
+		shellExePath = path.join(shellAppDir, executableName);
+		iconPath = path.resolve('resources', 'win', 'app.ico');
+		
+		rcedit = require('rcedit');
+		rcedit(shellExePath, {'icon': iconPath}, done);
+	});
+	grunt.registerTask("deletedebug", function() { //delete debugging files for Atom
+				
+	});
+	
 };
