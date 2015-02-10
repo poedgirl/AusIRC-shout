@@ -1,5 +1,6 @@
+var socket = io();
+
 $(function() {
-	var socket = io();
 	var commands = [
 		"/close",
 		"/connect",
@@ -572,7 +573,11 @@ $(function() {
 					pop.play();
 				}
 				favico.badge("!");
-				if (settings.badge && Notification.permission == "granted") {
+				if (settings.badge) {
+					require('remote').getCurrentWindow().flashFrame(true);
+				}
+				//Notifications cause issues in Atom-Shell, I'll see if it's possible to re-enable them some other time
+				/*if (settings.badge && Notification.permission == "granted") {
 					var notify = new Notification(msg.from + " says:", {
 						body: msg.text.trim(),
 						icon: "/img/logo-64.png"
@@ -585,7 +590,7 @@ $(function() {
 					window.setTimeout(function() {
 						notify.close();
 					}, 5 * 1000);
-				}
+				}*/
 			}
 		}
 
@@ -878,3 +883,9 @@ $(function() {
 		}
 	);
 });
+
+function openExternal(url) {
+	var remote = require('remote');
+	var shell = remote.require('shell');
+	shell.openExternal(url);
+}

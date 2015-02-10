@@ -20,7 +20,7 @@
  *    animation : 'slide',
  * });
  */
-(function() {
+
 
 	var Favico = (function(opt) {'use strict';
 		opt = (opt) ? opt : {};
@@ -836,4 +836,4 @@
 		this.Favico = Favico;
 	}
 
-})();
+

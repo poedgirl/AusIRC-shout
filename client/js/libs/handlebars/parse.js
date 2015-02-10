@@ -40,7 +40,7 @@ function uri(text) {
 			return url;
 		}
 		var split = url.split("<");
-		url = "<a href='" + split[0].replace(/^www/, "//www") + "' target='_blank'>" + split[0] + "</a>";
+		url = "<a href=\"#\" onclick=\"openExternal('" + split[0].replace(/^www/, "//www") + "');\">" + split[0] + "</a>";
 		if (split.length > 1) {
 			url += "<" + split.slice(1).join("<");
 		}

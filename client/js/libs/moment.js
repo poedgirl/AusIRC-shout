@@ -4,7 +4,7 @@
 //! license : MIT
 //! momentjs.com
 
-(function (undefined) {
+
 
     /************************************
         Constants
@@ -2607,4 +2607,4 @@
     } else {
         makeGlobal();
     }
-}).call(this);
+
