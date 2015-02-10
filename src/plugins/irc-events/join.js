@@ -31,6 +31,7 @@ module.exports = function(irc, network) {
 		}
 		var msg = new Msg({
 			from: data.nick,
+			text: data.hostmask,
 			type: Msg.Type.JOIN,
 			self: self
 		});
