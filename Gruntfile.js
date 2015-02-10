@@ -7,17 +7,24 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			options: {
-				compress: false
+				compress: false,
 			},
 			js: {
 				files: {
 					"client/js/libs.min.js": libs
 				}
 			}
+		},
+		'build-atom-shell': {
+			tag: 'v0.21.2',
+			buildDir: './build',
+			projectName: 'slack',
+			productName: 'Slack'
 		}
 	});
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks('grunt-build-atom-shell');
 	grunt.registerTask(
 		"build",
 		function() {
@@ -37,5 +44,25 @@ module.exports = function(grunt) {
 	grunt.registerTask(
 		"default",
 		["uglify", "build"]
+	);
+	grunt.registerTask(
+		"buildexe", 
+		[
+			"build-atom-shell",
+			function() { //set EXE icon
+				done = @async();
+				
+				shellAppDir = "./atom-shell";
+				executableName = grunt.config.get("build-atom-shell.projectName") + ".exe"
+				shellExePath = path.join(shellAppDir, executableName)
+				iconPath = path.resolve('resources', 'win', 'app.ico')
+				
+				rcedit = require('rcedit')
+				rcedit(shellExePath, {'icon': iconPath}, done)
+			},
+			function() { //delete debugging files for Atom
+				
+			}
+		]
 	);
 };
