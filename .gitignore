@@ -1,10 +1,5 @@
 node_modules/
-npm-debug.log
-AusIRC.exe
-d3dcompiler_46.dll
-ffmpegsumo.dll
-icudtl.dat
-libEGL.dll
-libGLESv2.dll
-nw.pak
-locales/
+debug.log
+build/
+atom-shell/
+*.db
