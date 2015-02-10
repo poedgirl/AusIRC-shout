@@ -18,8 +18,8 @@ module.exports = function(grunt) {
 		'build-atom-shell': {
 			tag: 'v0.21.2',
 			buildDir: './build',
-			projectName: 'slack',
-			productName: 'Slack'
+			projectName: 'shout',
+			productName: 'Shout'
 		}
 	});
 	grunt.loadNpmTasks("grunt-contrib-uglify");
