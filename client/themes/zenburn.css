@@ -193,8 +193,7 @@ QUIT #bc6c4c
   color: #8cd0d3 !important;
 }
 /* Embeds */
-#chat .toggle-content,
-#chat .toggle-button {
+#chat .toggle-container {
   background: #93b3a3;
   color: #dcdccc;
 }

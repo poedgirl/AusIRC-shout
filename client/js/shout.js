@@ -298,8 +298,9 @@ $(function() {
 	});
 
 	socket.on("toggle", function(data) {
+		var msg = $("#msgtext-" + data.id);
+		msg.append(render("toggle", {toggle: data}));
 		var toggle = $("#toggle-" + data.id);
-		toggle.parent().after(render("toggle", {toggle: data}));
 		switch (data.type) {
 		case "link":
 			if (options.links) {
@@ -634,7 +635,7 @@ $(function() {
 		var self = $(this);
 		var chat = self.closest(".chat");
 		var bottom = chat.isScrollBottom();
-		var content = self.parent().next(".toggle-content");
+		var content = self.next(".toggle-content");
 		if (bottom && !content.hasClass("show")) {
 			var img = content.find("img");
 			if (img.length != 0 && !img.width()) {
@@ -643,6 +644,7 @@ $(function() {
 				});
 			}
 		}
+		self.toggleClass("show");
 		content.toggleClass("show");
 		if (bottom) {
 			chat.scrollBottom();

@@ -1,5 +1,5 @@
 {{#each messages}}
-<div class="msg {{type}} {{#if self}}self{{/if}}">
+<div class="msg {{type}} {{#if self}}self{{/if}}" id="msg-{{id}}">
 	<span class="time">
 		{{tz time}}
 	</span>
@@ -8,15 +8,10 @@
 		<button class="user" style="color: #{{stringcolor from}}">{{mode}}{{from}}</button>
 		{{/if}}
 	</span>
-	<span class="text">
+	<span class="text" id="msgtext-{{id}}">
 		<em class="type">{{type}}</em>
 		{{#equal type "toggle"}}
-			<div class="force-newline">
-				<button id="toggle-{{id}}" class="toggle-button">···</button>
-			</div>
-			{{#if toggle}}
-				{{partial "toggle"}}
-			{{/if}}
+			{{partial "toggle"}}
 		{{else}}
 			{{{parse text}}}
 		{{/equal}}
