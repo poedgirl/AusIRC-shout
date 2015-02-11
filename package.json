@@ -46,6 +46,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "handlebars": "^2.0.0",
     "mocha": "~2.0.1",
-	"rcedit": "~0.3.0"
+    "rcedit": "~0.3.0",
+    "fs-extra":  "~0.16.3"
   }
 }

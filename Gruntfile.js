@@ -24,7 +24,8 @@ module.exports = function(grunt) {
 	});
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-watch");
-	grunt.loadNpmTasks('grunt-build-atom-shell');
+    grunt.loadNpmTasks('grunt-build-atom-shell');
+    grunt.loadTasks('build/tasks');
 	grunt.registerTask(
 		"build",
 		function() {
@@ -50,22 +51,8 @@ module.exports = function(grunt) {
 		[
 			"build-atom-shell",
 			"setexeicon",
-			"deletedebug"
+            "deletedebug",
+            "copyapp"
 		]
-	);
-	grunt.registerTask("setexeicon", function() { //set EXE icon
-		done = this.async();
-		
-		shellAppDir = "./atom-shell";
-		executableName = grunt.config.get("build-atom-shell.projectName") + ".exe";
-		shellExePath = path.join(shellAppDir, executableName);
-		iconPath = path.resolve('resources', 'win', 'app.ico');
-		
-		rcedit = require('rcedit');
-		rcedit(shellExePath, {'icon': iconPath}, done);
-	});
-	grunt.registerTask("deletedebug", function() { //delete debugging files for Atom
-				
-	});
-	
+	);	
 };
