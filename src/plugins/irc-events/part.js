@@ -24,6 +24,7 @@ module.exports = function(irc, network) {
 			});
 			var msg = new Msg({
 				type: Msg.Type.PART,
+				text: data.hostmask.username + "@" + data.hostmask.hostname + " (" + data.message + ")",
 				mode: chan.getMode(from),
 				from: from
 			});

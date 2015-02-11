@@ -17,6 +17,7 @@ module.exports = function(irc, network) {
 			});
 			var msg = new Msg({
 				type: Msg.Type.QUIT,
+				text: data.hostmask.username + "@" + data.hostmask.hostname + " (" + data.message + ")",
 				mode: chan.getMode(from),
 				from: from
 			});
