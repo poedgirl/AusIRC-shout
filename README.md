@@ -27,6 +27,8 @@ when the application is ready.
 * [Xcode](https://developer.apple.com/technologies/tools/) >= 5.1
 * [node.js](http://nodejs.org) (external).
 
+#### Note: at the moment, automated build is not supported on a Mac (I'm working on it).
+
 ### Build procedure
 ```
 npm install
