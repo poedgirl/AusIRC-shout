@@ -1,14 +1,14 @@
-# AusIRC Shout
+# Shout-Desktop
 
 __What is it?__  
-AusIRC Shout is a fork of [Shout](https://github.com/erming/shout).
+Shout-Desktop is a fork of [Shout](https://github.com/erming/shout).
 This version is designed for a desktop environment instead of web-based.
 It uses the [Atom-Shell](https://github.com/atom/atom-shell) project as
 a desktop backend. It also has several improvements from the base Shout
 code that I thought were needed.
 
 ## Binaries
-Prebuilt binaries will be available at the [AusIRC Website](https://ausirc.org)
+Prebuilt binaries will be available in the releases section
 when the application is ready.
 
 ## Build/Install

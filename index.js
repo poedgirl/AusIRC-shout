@@ -14,7 +14,7 @@ app.on('window-all-closed', function() {
 
 app.on('ready', function() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 1680, height: 1050, show: false, title: "AusIRC Shout"});
+    mainWindow = new BrowserWindow({width: 1680, height: 1050, show: false, title: "Shout"});
 
     // and load the index.html of the app.
     mainWindow.loadUrl('http://localhost:9000/');
